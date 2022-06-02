@@ -3,9 +3,14 @@ const input = fs.readFileSync('./input.txt', 'utf-8').split('\n')
 
 const REGEX_GET_DISPLAY_NUMBERS = /\| (\w+) (\w+) (\w+) (\w+)/
 
-const arrOfSegments = input.map(line => {
+const arrOfSegments = input.map((line) => {
     const [_match, a, b, c, d] = line.match(REGEX_GET_DISPLAY_NUMBERS)
-    return [a.sort(), b.sort(), c.sort(), d.sort()]
+    return [
+        a.split('').sort(),
+        b.split('').sort(),
+        c.split('').sort(),
+        d.split('').sort(),
+    ]
 })
 
 const dict = {
@@ -21,7 +26,7 @@ const dict = {
     9: 0,
 }
 
-arrOfSegments.forEach(segments => {
+arrOfSegments.forEach((segments) => {
     for (const segment of segments) {
         if (segment.length === 2) {
             dict['1']++
@@ -36,8 +41,7 @@ arrOfSegments.forEach(segments => {
             dict['8']++
         }
     }
-}
-)
+})
 
 const sum = Object.values(dict).reduce((acc, value) => {
     return acc + value
