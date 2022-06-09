@@ -4,10 +4,7 @@ const grid = fs
     .split('\n')
     .map((line) => line.split('').map((num) => +num))
 
-let flashes = 0
-
 const flash = (y, x) => {
-    flashes++
     // An indicator that it already flashed this round
     grid[y][x] = -1
     for (const dy of [-1, 0, 1]) {
