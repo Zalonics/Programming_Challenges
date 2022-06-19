@@ -20,6 +20,11 @@ function islandPerimeter(grid) {
     return perimeter
 }
 
+/**
+ *@param {number}
+ *@param {number}
+ *@return {boolean}
+ */
 function isEmptySquare(r, c) {
     if (r < 0 || r > grid.length - 1) return true
     if (c < 0 || c > grid[0].length - 1) return true
@@ -28,6 +33,11 @@ function isEmptySquare(r, c) {
     return false
 }
 
+/**
+ *@param {number}
+ *@param {number}
+ *@return {number}
+ */
 function countSides(r, c) {
     let sides = 0
     if (isEmptySquare(r - 1, c)) sides++
@@ -36,3 +46,5 @@ function countSides(r, c) {
     if (isEmptySquare(r, c + 1)) sides++
     return sides
 }
+
+console.log(islandPerimeter(grid))
