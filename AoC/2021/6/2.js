@@ -44,7 +44,8 @@ for (let i = 0; i < days; i++) {
 }
 
 const sum = Object.values(lantern_fishies).reduce((acc, val) => {
-    return acc + val
+return acc + val
 }, 0)
+
 
 console.log(sum)

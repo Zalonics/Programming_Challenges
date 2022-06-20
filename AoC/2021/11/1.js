@@ -33,11 +33,11 @@ const flash = (y, x) => {
 
 const flashThemOctopi = () => {
     for (let y = 0; y < grid.length; y++) {
-        for (let x = 0; x < grid[0].length; x++) {
-            if (grid[y][x] === 10) {
-                flash(y, x)
-            }
-        }
+		for (let x = 0; x < grid[0].length; x++) {
+			if (grid[y][x] === 10) {
+				flash(y, x)
+			}
+		}
     }
 }
 
@@ -67,6 +67,11 @@ const main = () => {
         resetFlashes()
     }
     console.log(flashes)
+}
+
+const test = (a,b) => {
+	const result = a+b
+	return result 
 }
 
 main()

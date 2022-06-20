@@ -59,6 +59,7 @@ const getBasinSizeGivenPoint = (y, x) => {
     queue.push([y, x])
     while (queue.length !== 0) {
         let [y, x] = queue[0]
+        
         // Queue up Neighbors
         const isBeingVisited = (y, x) => {
             if (grid[y][x] === 9) {
@@ -69,6 +70,7 @@ const getBasinSizeGivenPoint = (y, x) => {
             }
             return true
         }
+
         const checkTopNeighbor = (y, x) => {
             if (y === 0) {
                 return
@@ -78,6 +80,7 @@ const getBasinSizeGivenPoint = (y, x) => {
                 visited.add(`${y},${x}`)
             }
         }
+
         const checkBottomNeighbor = (y, x) => {
             if (y === grid.length - 1) {
                 return
@@ -87,6 +90,7 @@ const getBasinSizeGivenPoint = (y, x) => {
                 queue.push([y + 1, x])
             }
         }
+
         const checkRightNeighbor = (y, x) => {
             if (x === grid[0].length - 1) {
                 return
@@ -95,6 +99,7 @@ const getBasinSizeGivenPoint = (y, x) => {
                 queue.push([y, x + 1])
             }
         }
+
         const checkLeftNeighbor = (y, x) => {
             if (x === 0) {
                 return
@@ -103,8 +108,8 @@ const getBasinSizeGivenPoint = (y, x) => {
                 queue.push([y, x - 1])
             }
         }
-        visited.add(`${y},${x}`)
 
+        visited.add(`${y},${x}`)
         checkTopNeighbor(y, x)
         checkBottomNeighbor(y, x)
         checkLeftNeighbor(y, x)

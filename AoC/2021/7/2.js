@@ -21,3 +21,4 @@ const mostFuelEfficient = (min, max) => {
 }
 
 console.log(mostFuelEfficient(Math.min(...input), Math.max(...input)))
+
